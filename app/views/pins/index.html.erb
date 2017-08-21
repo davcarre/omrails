@@ -1,0 +1,26 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Pins</h1>
+
+      <% @pins.each do |pin| %>
+          </p>
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src=<%= pin.image %> alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title"><%= pin.title %></h4>
+            <p class="card-text"><%= pin.comment %></p>
+            <%= link_to 'Show', pin, class: "card-link"%>
+            <% if pin.user == current_user %>
+              <%= link_to 'Edit', edit_pin_path(pin),  class: "card-link" %>
+              <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } ,  class: "card-link"%>
+              <% else %><% end %> 
+          </div>
+          </div>
+      <% end %>
+
+
+  <br>
+
+  <%= link_to 'New Pin', new_pin_path %>
+</div>
