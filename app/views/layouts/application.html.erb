@@ -22,6 +22,7 @@
            <li class="nav-item"><%= link_to "Pins", pins_path, class: "nav-link" %></li>
           <% if user_signed_in? %>
             <li class="nav-item"><%= link_to "Log out", signout_path, method: :delete, class: "btn btn-danger" %></li>
+            <li class="nav-item"><%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-secondary" %></li>
           <% else %>
             <li class="nav-item"><%= link_to "Sign up", signup_path,  class: "btn btn-primary" %></li>
             <li class="nav-item"><%= link_to "Sign in", signin_path,  class: "btn btn-secondary" %></li>
